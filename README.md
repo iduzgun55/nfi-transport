@@ -4,7 +4,7 @@
 
 This repository contains the simulation scripts, figure-generation code, and raw data accompanying the manuscript:
 
-> İ. Düzgün, "Finite-Time Deviation from Fickian Transport in Deterministic Dynamics: A Reproducible Diagnostic Framework," submitted to *Physical Review E* (2026).
+> İ. Düzgün, "Finite-Time Deviation from Fickian Transport in Deterministic Dynamics: A Reproducible Diagnostic Framework," submitted to *Chaos: An Interdisciplinary Journal of Nonlinear Science* (2026).
 
 ## Contents
 
