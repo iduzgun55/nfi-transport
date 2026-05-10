@@ -39,7 +39,7 @@ All figures are saved as PDF in the `figs/` directory.
 ## Reproducibility
 
 - Random seed is fixed (`np.random.seed(42)`) for full reproducibility.
-- Default parameters: m★ = 800, 80 histogram bins with Laplace smoothing, bootstrap SE with 60 (logistic) / 30 (Hénon, PM) resamples.
+- Default parameters: m★ = 800, 80 histogram bins with Laplace smoothing, bootstrap SE with 500 resamples for all systems.
 - All numerical settings match those reported in the manuscript.
 
 ## License
