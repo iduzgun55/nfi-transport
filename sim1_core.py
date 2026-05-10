@@ -114,7 +114,7 @@ print("[3] Pomeau-Manneville...")
 Ntp=1500; pm_mg=np.array([50,100,200,400,800])
 T3=[]
 pmt={}
-for z in [1.2,1.5,1.8,2.0,2.5]:
+for z in [1.2,1.3,1.5,1.8,2.0,2.5]:   # z=1.30 added for near-Fickian yet non-Gaussian analysis
     t=np.zeros((Ntp,Ns))
     for i in range(Ntp): t[i]=pomeau_manneville(z,np.random.uniform(0.01,0.99),Ns)
     pmt[z]=t
@@ -122,9 +122,11 @@ for z in [1.2,1.5,1.8,2.0,2.5]:
     Zm=compute_Zm(t,gx,ms); kl=kl_hist(Zm)
     w1=wasserstein_distance(Zm,np.random.randn(len(Zm))) if Zm is not None else 50.
     nfi=kl+abs(al-1)
-    ath=min(2.,1./(z-1)) if z>1 else 1.
-    T3.append(dict(z=z,a=al,ath=ath,R2=R2,kl=kl,w1=w1,nfi=nfi))
-    print(f"  z={z}: α={al:.3f}(th≈{ath:.2f}) R²={R2:.3f} KL={kl:.4f} NFI={nfi:.4f}")
+    from scipy.stats import skew as _skew, kurtosis as _kurt
+    sk=float(_skew(Zm)) if Zm is not None else float('nan')
+    ku=float(_kurt(Zm)) if Zm is not None else float('nan')  # excess kurtosis
+    T3.append(dict(z=z,a=al,R2=R2,kl=kl,w1=w1,nfi=nfi,skew=sk,kurt=ku))
+    print(f"  z={z}: α={al:.3f} R²={R2:.3f} KL={kl:.4f} skew={sk:.3f} kurt={ku:.3f} NFI={nfi:.4f}")
 
 # Save all
 pickle.dump(dict(lt=lt,ht=ht,pmt=pmt,T1=T1,T2=T2,T3=T3,mg=mg,pm_mg=pm_mg,ms=ms,nb=nb,rvals=rvals),
