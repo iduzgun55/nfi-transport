@@ -1,5 +1,5 @@
 """
-gen_figs_r10.py — Generates all 11 figures for R10 manuscript.
+gen_figs.py — Generates all 11 figures for the manuscript.
 
 Figure mapping:
   fig1  = logistic variance scaling (4-panel, wide)
