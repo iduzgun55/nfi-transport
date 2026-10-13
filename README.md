@@ -44,4 +44,4 @@ Random seeds are fixed in each script. The ensemble-size rows for PM $z=1.8$ in 
 MIT
 
 ## Contact
-İbrahim Düzgün, ibrahim.duzgun@gumushane.edu.tr, Department of Physics Engineering, Gümüşhane University, Türkiye
+İbrahim Düzgün, ibrahimduzgun@gumushane.edu.tr, Department of Physics Engineering, Gümüşhane University, Türkiye
